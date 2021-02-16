@@ -139,6 +139,14 @@ namespace Tests
         }
 
         [Fact]
+        public async void Test_UpdateStatusAsync_NullOrderItem()
+        {
+            Func<Task> updateFakeOrderItem = () => _orderItemRepository.UpdateStatusAsync(null, OrderItemStatus.Ready);
+
+            await Assert.ThrowsAsync<Exception>(updateFakeOrderItem);
+        }
+
+        [Fact]
         public async void Test_UpdateStatusAsync_FakeOrderItem()
         {
             OrderItem fakeOrderItem = new OrderItem

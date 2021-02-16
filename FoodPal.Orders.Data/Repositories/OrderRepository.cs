@@ -97,6 +97,11 @@ namespace FoodPal.Orders.Data.Repositories
         {
             try
             {
+                if (orderEntity is null)
+                {
+                    throw new ArgumentNullException(nameof(orderEntity));
+                }
+
                 var order = await _ordersContext.Orders.FindAsync(orderEntity.Id);
                 if (order == null)
                 {
