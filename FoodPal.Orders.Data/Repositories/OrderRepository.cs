@@ -95,13 +95,13 @@ namespace FoodPal.Orders.Data.Repositories
 
         public async Task UpdateStatusAsync(Order orderEntity, OrderStatus newStatus)
         {
+            if (orderEntity is null)
+            {
+                throw new ArgumentNullException(nameof(orderEntity));
+            }
+
             try
             {
-                if (orderEntity is null)
-                {
-                    throw new ArgumentNullException(nameof(orderEntity));
-                }
-
                 var order = await _ordersContext.Orders.FindAsync(orderEntity.Id);
                 if (order == null)
                 {

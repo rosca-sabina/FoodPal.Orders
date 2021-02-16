@@ -143,7 +143,7 @@ namespace Tests
         {
             Func<Task> updateFakeOrderItem = () => _orderItemRepository.UpdateStatusAsync(null, OrderItemStatus.Ready);
 
-            await Assert.ThrowsAsync<Exception>(updateFakeOrderItem);
+            await Assert.ThrowsAsync<ArgumentNullException>(updateFakeOrderItem);
         }
 
         [Fact]
