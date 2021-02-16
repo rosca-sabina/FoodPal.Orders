@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FoodPal.Orders.Contracts\FoodPal.Orders.Contracts.csproj" />
+    <ProjectReference Include="..\FoodPal.Orders.Data\FoodPal.Orders.Data.csproj" />
+    <ProjectReference Include="..\FoodPal.Orders.DTOs\FoodPal.Orders.DTOs.csproj" />
+    <ProjectReference Include="..\FoodPal.Orders.MessageBroker.Contracts\FoodPal.Orders.MessageBroker.Contracts.csproj" />
+    <ProjectReference Include="..\FoodPal.Orders.MessageBroker.ServiceBus\FoodPal.Orders.MessageBroker.ServiceBus.csproj" />
+    <ProjectReference Include="..\FoodPal.Orders.Services.Contracts\FoodPal.Orders.Services.Contracts.csproj" />
+    <ProjectReference Include="..\FoodPal.Orders.Services\FoodPal.Orders.Services.csproj" />
+  </ItemGroup>
+
+</Project>
