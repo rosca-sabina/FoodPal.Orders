@@ -37,7 +37,13 @@ namespace FoodPal.Orders.Data.Repositories
         {
             try
             {
-                var orderItem = await _ordersContext.OrderItems.FindAsync(orderItemId);
+                var order = await _ordersContext.Orders.FindAsync(orderId);
+                if(order is null)
+                {
+                    return null;
+                }
+
+                var orderItem = await _ordersContext.OrderItems.SingleOrDefaultAsync(x => x.Id == orderItemId && x.OrderId == orderId);
                 return orderItem;
             }
             catch (Exception ex)
