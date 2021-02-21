@@ -50,12 +50,15 @@ namespace FoodPal.Orders.BackgroundServices.Handlers
             {
                 switch (providerItems.Key.ToLower())
                 {
-                    case "xyz":
                     case "chefsexperience":
-                        await SendOrderRequestToProviderViaHttpAsync(_httpProviderEndpoints.ChefsExperienceEndpoint, persistedOrder.Id, providerItems.Value);
+                    case "greekcuisine":
+                        string endpoint = GetProviderEndpoint(providerItems.Key.ToLower());
+                        await SendOrderRequestToProviderViaHttpAsync(endpoint, persistedOrder.Id, providerItems.Value);
                         await UpdateOrderItemsStatus(providerItems.Value);
                         break;
+                    case "xyz":
                     case "kfc":
+                    case "prestopizza":
                         await SendOrderRequestToProviderViaMessageBrokerAsync(providerItems.Key.ToLower(), persistedOrder.Id, providerItems.Value);
                         await UpdateOrderItemsStatus(providerItems.Value);
                         break;
@@ -123,6 +126,18 @@ namespace FoodPal.Orders.BackgroundServices.Handlers
         private async Task UpdateOrderStatus(Order order)
         {
             await _unitOfWork.OrderRepository.UpdateStatusAsync(order, OrderStatus.InProgress);
+        }
+
+        private string GetProviderEndpoint(string provider)
+        {
+            switch(provider.ToLowerInvariant()){
+                case "chefsexperience":
+                    return _httpProviderEndpoints.ChefsExperienceEndpoint;
+                case "greekcuisine":
+                    return _httpProviderEndpoints.GreekCuisineEndpoint;
+                default:
+                    throw new Exception($"No endpoint exists for provider {provider}.");
+            }
         }
         #endregion
     }

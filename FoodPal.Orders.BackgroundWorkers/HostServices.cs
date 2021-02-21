@@ -36,6 +36,8 @@ namespace FoodPal.Orders.BackgroundWorkers
 
             services.AddHostedService<NewOrderWorker>();
             services.AddHostedService<KfcProviderOrderItemsWorker>();
+            services.AddHostedService<XyzProviderOrderItemsWorker>();
+            services.AddHostedService<PrestoPizzaProviderOrderItemsWorker>();
         }
     }
 }

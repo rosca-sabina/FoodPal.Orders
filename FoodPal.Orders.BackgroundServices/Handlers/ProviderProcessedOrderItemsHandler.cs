@@ -34,7 +34,9 @@ namespace FoodPal.Orders.BackgroundServices.Handlers
 			var updatedOrder = await _unitOfWork.OrderRepository.GetByIdAsync(payload.OrderId);
 
 			if (updatedOrder.Items.All(x => x.Status == OrderItemStatus.Ready))
+            {
 				await _unitOfWork.OrderRepository.UpdateStatusAsync(updatedOrder, OrderStatus.ReadyForPickup);
+			}
 		}
 
 		private async Task UpdateOrderItemsStatus(List<OrderItem> orderItems)

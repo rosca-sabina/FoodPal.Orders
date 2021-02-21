@@ -13,8 +13,8 @@ namespace FoodPal.Orders.BackgroundWorkers
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureServices(HostServices.Configure)
-            .ConfigureLogging((hostingContext, loggingBuilder) => {
-                loggingBuilder.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
-            });
+                .ConfigureLogging((hostingContext, loggingBuilder) => {
+                    loggingBuilder.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
+                });
     }
 }

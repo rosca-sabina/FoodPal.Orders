@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FoodPal.Orders.BackgroundServices\FoodPal.Orders.BackgroundServices.csproj" />
-    <ProjectReference Include="..\FoodPal.Orders.Data\FoodPal.Orders.Data.csproj" />
     <ProjectReference Include="..\FoodPal.Orders.Mappers\FoodPal.Orders.Mappers.csproj" />
     <ProjectReference Include="..\FoodPal.Orders.MessageBroker.Contracts\FoodPal.Orders.MessageBroker.Contracts.csproj" />
     <ProjectReference Include="..\FoodPal.Orders.MessageBroker.ServiceBus\FoodPal.Orders.MessageBroker.ServiceBus.csproj" />
