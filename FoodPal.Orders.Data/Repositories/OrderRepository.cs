@@ -1,4 +1,4 @@
-﻿using FoodPal.Orders.Contracts;
+﻿using FoodPal.Orders.Data.Contracts;
 using FoodPal.Orders.Enums;
 using FoodPal.Orders.Models;
 using Microsoft.EntityFrameworkCore;

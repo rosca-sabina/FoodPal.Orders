@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FoodPal.Orders.DTOs\FoodPal.Orders.DTOs.csproj" />
+    <ProjectReference Include="..\FoodPal.Orders.Models\FoodPal.Orders.Models.csproj" />
+  </ItemGroup>
+
+</Project>

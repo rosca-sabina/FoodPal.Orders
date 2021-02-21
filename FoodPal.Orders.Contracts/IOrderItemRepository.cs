@@ -3,7 +3,7 @@ using FoodPal.Orders.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FoodPal.Orders.Contracts
+namespace FoodPal.Orders.Data.Contracts
 {
     public interface IOrderItemRepository
     {

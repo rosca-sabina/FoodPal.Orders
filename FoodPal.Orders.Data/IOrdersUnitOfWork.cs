@@ -1,4 +1,4 @@
-﻿using FoodPal.Orders.Contracts;
+﻿using FoodPal.Orders.Data.Contracts;
 
 namespace FoodPal.Orders.Data
 {
@@ -6,5 +6,6 @@ namespace FoodPal.Orders.Data
     {
         IOrderRepository OrderRepository { get; }
         IOrderItemRepository OrderItemRepository { get; }
+        IDeliveryDetailsRepository DeliveryDetailsRepository { get; }
     }
 }

@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPal.Orders.Enums", "Foo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPal.Orders.Data", "FoodPal.Orders.Data\FoodPal.Orders.Data.csproj", "{4818AEC2-A4AD-4137-AE1D-18646DAC9849}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPal.Orders.Contracts", "FoodPal.Orders.Contracts\FoodPal.Orders.Contracts.csproj", "{D12E1569-EBFC-41D0-BF8B-9E34EC3A6264}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPal.Orders.Data.Contracts", "FoodPal.Orders.Contracts\FoodPal.Orders.Data.Contracts.csproj", "{D12E1569-EBFC-41D0-BF8B-9E34EC3A6264}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPal.Orders.API", "FoodPal.Orders.API\FoodPal.Orders.API.csproj", "{F60EB0A1-DFF5-4C3A-A8EB-CC8648D65A90}"
 EndProject
@@ -31,9 +31,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPal.Orders.MessageBroke
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPal.Orders.MessageBroker.ServiceBus", "FoodPal.Orders.MessageBroker.ServiceBus\FoodPal.Orders.MessageBroker.ServiceBus.csproj", "{09D1D346-A93B-4CB8-A3EC-6FCF9ADA3C10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodPal.Orders.Exceptions", "FoodPal.Orders.Exceptions\FoodPal.Orders.Exceptions.csproj", "{2F138CB6-7E45-49F7-A794-F3E9E207925B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPal.Orders.Exceptions", "FoodPal.Orders.Exceptions\FoodPal.Orders.Exceptions.csproj", "{2F138CB6-7E45-49F7-A794-F3E9E207925B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{7F52DD4C-2A90-4E80-BE3A-A1012EFF48BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{7F52DD4C-2A90-4E80-BE3A-A1012EFF48BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPal.Orders.BackgroundWorkers", "FoodPal.Orders.BackgroundWorkers\FoodPal.Orders.BackgroundWorkers.csproj", "{4BA35605-E592-4B20-8EEF-F60762B9F39E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPal.Orders.BackgroundServices", "FoodPal.Orders.BackgroundServices\FoodPal.Orders.BackgroundServices.csproj", "{0A65B8F8-CC50-4E05-8F1C-7FEF3ABAB905}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPal.Orders.Mappers", "FoodPal.Orders.Mappers\FoodPal.Orders.Mappers.csproj", "{FC17CF5B-D873-4A57-9FC1-30D9E4D5B375}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +95,18 @@ Global
 		{7F52DD4C-2A90-4E80-BE3A-A1012EFF48BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F52DD4C-2A90-4E80-BE3A-A1012EFF48BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F52DD4C-2A90-4E80-BE3A-A1012EFF48BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA35605-E592-4B20-8EEF-F60762B9F39E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA35605-E592-4B20-8EEF-F60762B9F39E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA35605-E592-4B20-8EEF-F60762B9F39E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA35605-E592-4B20-8EEF-F60762B9F39E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A65B8F8-CC50-4E05-8F1C-7FEF3ABAB905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A65B8F8-CC50-4E05-8F1C-7FEF3ABAB905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A65B8F8-CC50-4E05-8F1C-7FEF3ABAB905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A65B8F8-CC50-4E05-8F1C-7FEF3ABAB905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC17CF5B-D873-4A57-9FC1-30D9E4D5B375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC17CF5B-D873-4A57-9FC1-30D9E4D5B375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC17CF5B-D873-4A57-9FC1-30D9E4D5B375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC17CF5B-D873-4A57-9FC1-30D9E4D5B375}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +120,9 @@ Global
 		{65E7B8C6-9943-4034-80BB-EF5AEB9186DA} = {57FEBA7A-A457-4C6C-9504-0983495D997A}
 		{09D1D346-A93B-4CB8-A3EC-6FCF9ADA3C10} = {57FEBA7A-A457-4C6C-9504-0983495D997A}
 		{2F138CB6-7E45-49F7-A794-F3E9E207925B} = {84CBB748-C8F9-4304-8EF2-093E4E4CF479}
+		{4BA35605-E592-4B20-8EEF-F60762B9F39E} = {7A4F92A3-E971-4C26-B838-740CE4C3B58B}
+		{0A65B8F8-CC50-4E05-8F1C-7FEF3ABAB905} = {7A4F92A3-E971-4C26-B838-740CE4C3B58B}
+		{FC17CF5B-D873-4A57-9FC1-30D9E4D5B375} = {84CBB748-C8F9-4304-8EF2-093E4E4CF479}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3D886558-51E5-4812-9656-83E01F83172D}

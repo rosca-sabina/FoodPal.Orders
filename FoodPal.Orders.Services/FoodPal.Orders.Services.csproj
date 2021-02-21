@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="FluentValidation" Version="9.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FoodPal.Orders.Data\FoodPal.Orders.Data.csproj" />
     <ProjectReference Include="..\FoodPal.Orders.Exceptions\FoodPal.Orders.Exceptions.csproj" />
     <ProjectReference Include="..\FoodPal.Orders.MessageBroker.Contracts\FoodPal.Orders.MessageBroker.Contracts.csproj" />
     <ProjectReference Include="..\FoodPal.Orders.Services.Contracts\FoodPal.Orders.Services.Contracts.csproj" />

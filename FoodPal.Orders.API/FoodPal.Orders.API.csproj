@@ -5,14 +5,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="FluentValidation" Version="9.5.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="9.5.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.0.5" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.0.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FoodPal.Orders.Contracts\FoodPal.Orders.Contracts.csproj" />
+    <ProjectReference Include="..\FoodPal.Orders.Contracts\FoodPal.Orders.Data.Contracts.csproj" />
     <ProjectReference Include="..\FoodPal.Orders.Data\FoodPal.Orders.Data.csproj" />
     <ProjectReference Include="..\FoodPal.Orders.DTOs\FoodPal.Orders.DTOs.csproj" />
+    <ProjectReference Include="..\FoodPal.Orders.Mappers\FoodPal.Orders.Mappers.csproj" />
     <ProjectReference Include="..\FoodPal.Orders.MessageBroker.Contracts\FoodPal.Orders.MessageBroker.Contracts.csproj" />
     <ProjectReference Include="..\FoodPal.Orders.MessageBroker.ServiceBus\FoodPal.Orders.MessageBroker.ServiceBus.csproj" />
     <ProjectReference Include="..\FoodPal.Orders.Services.Contracts\FoodPal.Orders.Services.Contracts.csproj" />

@@ -8,6 +8,11 @@ namespace FoodPal.Orders.MessageBroker.Contracts
         public string MesageType { get; set; }
         public TPayload Data { get; set; }
 
+        public MessageBrokerEnvelope()
+        {
+
+        }
+
         public MessageBrokerEnvelope(string messageType, TPayload payload, string requestId)
         {
             MesageType = messageType;

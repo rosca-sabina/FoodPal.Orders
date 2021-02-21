@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FoodPal.Orders.Contracts\FoodPal.Orders.Contracts.csproj" />
+    <ProjectReference Include="..\FoodPal.Orders.Contracts\FoodPal.Orders.Data.Contracts.csproj" />
     <ProjectReference Include="..\FoodPal.Orders.Models\FoodPal.Orders.Models.csproj" />
   </ItemGroup>
 
