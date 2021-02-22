@@ -47,6 +47,7 @@ namespace FoodPal.Orders.Data.Repositories
             try
             {
                 int allOrdersCount = await _ordersContext.Orders.CountAsync();
+
                 var orders = await _ordersContext.Orders
                     .Where(x => x.CustomerId.Equals(customerId)
                                 && (status == null || x.Status == status))
@@ -67,7 +68,7 @@ namespace FoodPal.Orders.Data.Repositories
         {
             try
             {
-                var order = await _ordersContext.Orders.FindAsync(orderId);
+                var order = await _ordersContext.Orders.SingleOrDefaultAsync(x => x.Id == orderId);
                 return order;
             }
             catch(Exception ex)
