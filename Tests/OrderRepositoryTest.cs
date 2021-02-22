@@ -134,7 +134,8 @@ namespace Tests
             var orders = await _orderRepository.GetByFiltersAsync(customerId, null, page, pageSize);
 
             int expectedItemCount = 4;
-            Assert.Equal(expectedItemCount, orders.AllOrdersCount);
+            int allItemsCount = 5;
+            Assert.Equal(allItemsCount, orders.AllOrdersCount);
             Assert.Equal(expectedItemCount, orders.Orders.Count());
 
             Assert.Collection(
@@ -156,7 +157,8 @@ namespace Tests
             var orders = await _orderRepository.GetByFiltersAsync(customerId, OrderStatus.New, page, pageSize);
 
             int expectedItemCount = 2;
-            Assert.Equal(expectedItemCount, orders.AllOrdersCount);
+            int allItemsCount = 5;
+            Assert.Equal(allItemsCount, orders.AllOrdersCount);
             Assert.Equal(expectedItemCount, orders.Orders.Count());
 
             Assert.Collection(

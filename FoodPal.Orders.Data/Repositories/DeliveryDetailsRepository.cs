@@ -31,7 +31,7 @@ namespace FoodPal.Orders.Data.Repositories
             }
             catch(Exception ex)
             {
-                throw new Exception($"Order details could not be retrieved. Reason: {ex.Message}.");
+                throw new Exception($"Order details could not be retrieved. Reason: {ex.Message}.", ex);
             }
         }
     }

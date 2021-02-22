@@ -29,7 +29,7 @@ namespace FoodPal.Orders.Data.Repositories
             }
             catch(Exception ex)
             {
-                throw new Exception($"Order items could not be retrieved. Reason: {ex.Message}");
+                throw new Exception($"Order items could not be retrieved. Reason: {ex.Message}", ex);
             }
         }
 
@@ -37,18 +37,21 @@ namespace FoodPal.Orders.Data.Repositories
         {
             try
             {
-                var order = await _ordersContext.Orders.FindAsync(orderId);
+                var order = await _ordersContext.Orders
+                    .Include(x => x.Items)
+                    .SingleOrDefaultAsync(x => x.Id == orderId);
+
                 if(order is null)
                 {
                     return null;
                 }
 
-                var orderItem = await _ordersContext.OrderItems.SingleOrDefaultAsync(x => x.Id == orderItemId && x.OrderId == orderId);
+                var orderItem = order.Items.SingleOrDefault(x => x.Id == orderItemId);
                 return orderItem;
             }
             catch (Exception ex)
             {
-                throw new Exception($"Order item could not be retrieved. Reason: {ex.Message}");
+                throw new Exception($"Order item could not be retrieved. Reason: {ex.Message}", ex);
             }
         }
 
@@ -74,7 +77,7 @@ namespace FoodPal.Orders.Data.Repositories
             }
             catch (Exception ex)
             {
-                throw new Exception($"Order item status could not be updated. Reason: {ex.Message}");
+                throw new Exception($"Order item status could not be updated. Reason: {ex.Message}", ex);
             }
         }
     }

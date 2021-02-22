@@ -33,7 +33,7 @@ namespace FoodPal.Orders.Data.Repositories
             }
             catch (Exception ex)
             {
-                throw new Exception($"Order could not be saved. Reason: {ex.Message}.");
+                throw new Exception($"Order could not be saved. Reason: {ex.Message}.", ex);
             }
         }
 
@@ -46,6 +46,7 @@ namespace FoodPal.Orders.Data.Repositories
 
             try
             {
+                int allOrdersCount = await _ordersContext.Orders.CountAsync();
                 var orders = await _ordersContext.Orders
                     .Where(x => x.CustomerId.Equals(customerId)
                                 && (status == null || x.Status == status))
@@ -54,11 +55,11 @@ namespace FoodPal.Orders.Data.Repositories
                     .Take(pageSize)
                     .ToListAsync();
 
-                return (orders, orders.Count);
+                return (orders, allOrdersCount);
             }
             catch(Exception ex)
             {
-                throw new Exception($"Orders could not be retrieved. Reason: {ex.Message}");
+                throw new Exception($"Orders could not be retrieved. Reason: {ex.Message}", ex);
             }
         }
 
@@ -71,7 +72,7 @@ namespace FoodPal.Orders.Data.Repositories
             }
             catch(Exception ex)
             {
-                throw new Exception($"Order could not be retrieved. Reason: {ex.Message}.");
+                throw new Exception($"Order could not be retrieved. Reason: {ex.Message}.", ex);
             }
         }
 
@@ -89,7 +90,7 @@ namespace FoodPal.Orders.Data.Repositories
             }
             catch (Exception ex)
             {
-                throw new Exception($"Order status could not be retrieved. Reason: {ex.Message}.");
+                throw new Exception($"Order status could not be retrieved. Reason: {ex.Message}.", ex);
             }
         }
 
@@ -115,7 +116,7 @@ namespace FoodPal.Orders.Data.Repositories
             }
             catch(Exception ex)
             {
-                throw new Exception($"Order status could not be updated. Reason: {ex.Message}.");
+                throw new Exception($"Order status could not be updated. Reason: {ex.Message}.", ex);
             }
         }
     }
